@@ -4,7 +4,7 @@ import { Booking } from '../contexts/BookingContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { format } from 'date-fns';
-import { CheckCircle, Ticket, Calendar, Clock, MapPin } from 'lucide-react';
+import { CheckCircle, Ticket, Calendar, Clock, MapPin, QrCode } from 'lucide-react';
 
 interface BookingConfirmationProps {
   booking: Booking;
@@ -12,6 +12,9 @@ interface BookingConfirmationProps {
 }
 
 const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onClose }) => {
+  // Generate a simple QR code-like representation for demo purposes
+  const bookingInfo = `Movie: ${booking.movie.title}, Date: ${booking.showtime.date}, Time: ${booking.showtime.time}, Seats: ${booking.seats.map(seat => `${seat.row}${seat.number}`).join(', ')}`;
+
   return (
     <Card className="border-primary/20">
       <CardContent className="p-6">
@@ -68,6 +71,16 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({ booking, onCl
                   <p className="font-medium">
                     {booking.seats.map(seat => `${seat.row}${seat.number}`).join(', ')}
                   </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* QR Code Section */}
+            <div className="flex justify-center my-4">
+              <div className="border-2 p-2 rounded-md">
+                <div className="flex flex-col items-center">
+                  <QrCode className="w-32 h-32 text-primary" />
+                  <p className="text-xs text-muted-foreground mt-2">Scan for ticket details</p>
                 </div>
               </div>
             </div>

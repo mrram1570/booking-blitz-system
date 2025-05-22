@@ -4,9 +4,11 @@ import { useBooking } from '../contexts/BookingContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Ticket } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const SeatSelector: React.FC = () => {
-  const { seats, selectedSeats, toggleSeatSelection, selectedShowtime } = useBooking();
+  const { seats, selectedSeats, toggleSeatSelection, selectedShowtime, createBooking } = useBooking();
+  const navigate = useNavigate();
 
   // Group seats by row
   const seatsByRow: Record<string, typeof seats> = {};
@@ -16,6 +18,14 @@ const SeatSelector: React.FC = () => {
     }
     seatsByRow[seat.row].push(seat);
   });
+
+  const handleConfirmBooking = () => {
+    const booking = createBooking();
+    if (booking) {
+      // Navigate to booking page after creating booking
+      navigate('/bookings');
+    }
+  };
 
   return (
     <Card className="bg-card border-none">
@@ -90,6 +100,7 @@ const SeatSelector: React.FC = () => {
             <Button 
               size="lg" 
               className="w-full sm:w-auto animate-pulse bg-primary hover:bg-primary/90 text-white"
+              onClick={handleConfirmBooking}
             >
               <Ticket className="mr-2 h-5 w-5" />
               Confirm Booking

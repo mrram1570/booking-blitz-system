@@ -115,16 +115,6 @@ const BookingPage = () => {
               <span>{selectedShowtime.hall}</span>
             </div>
           </div>
-          
-          <div className="w-full md:w-1/3 flex justify-end">
-            <Button 
-              className="w-full md:w-auto"
-              onClick={handleConfirmBooking}
-              disabled={selectedSeats.length === 0}
-            >
-              Confirm Booking
-            </Button>
-          </div>
         </div>
         
         <SeatSelector />
