@@ -1,24 +1,33 @@
-# Welcome to your Lovable project
+# Welcome to Your Movie Ticket Booking Project
 
-## Project info
+## Project Info
 
-**URL**: https://lovable.dev/projects/eb3cdcfc-203a-4252-9bb4-745c033718db
+**URL**: [http://localhost:8081/](http://localhost:8081/)
 
-## How can I edit this code?
+## How Can I Edit This Code?
 
-There are several ways of editing your application.
+There are several ways to edit your application:
 
-**Use Lovable**
+### Use Your Preferred IDE
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/eb3cdcfc-203a-4252-9bb4-745c033718db) and start prompting.
+If you want to work locally using your own IDE, you can clone this repository and push changes. Pushed changes will also be reflected in your project.
 
-Changes made via Lovable will be committed automatically to this repo.
+The only requirement is having Node.js & npm installed. You can install Node.js using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-**Use your preferred IDE**
+Follow these steps:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone https://github.com/mrram1570/booking-blitz-system.git
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Step 2: Navigate to the project directory.
+cd booking-blitz-system
+
+# Step 3: Install the necessary dependencies.
+npm install
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 
 Follow these steps:
 
@@ -62,7 +71,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/eb3cdcfc-203a-4252-9bb4-745c033718db) and click on Share -> Publish.
+Simply open [create a file ] mrram  and open git  clone ""
 
 ## Can I connect a custom domain to my Lovable project?
 
