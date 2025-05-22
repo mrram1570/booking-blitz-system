@@ -9,7 +9,7 @@ import { useBooking, Booking } from '../contexts/BookingContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 const BookingPage = () => {
   const { movieId, showtimeId } = useParams<{ movieId: string, showtimeId: string }>();

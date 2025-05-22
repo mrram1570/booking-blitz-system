@@ -1,9 +1,9 @@
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { Movie, Showtime, generateSeats } from '../data/movies';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
-interface Seat {
+export interface Seat {
   id: string;
   row: string;
   number: number;
@@ -29,7 +29,7 @@ interface BookingContextType {
   setSelectedMovie: (movie: Movie | null) => void;
   setSelectedShowtime: (showtime: Showtime | null) => void;
   toggleSeatSelection: (seat: Seat) => void;
-  createBooking: () => void;
+  createBooking: () => Booking | undefined;
   cancelBooking: (bookingId: string) => void;
   resetBookingProcess: () => void;
 }
@@ -75,12 +75,12 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setSelectedSeats(prev => prev.filter(s => s.id !== seat.id));
       setSeats(prev => 
         prev.map(s => 
-          s.id === seat.id ? { ...s, status: 'available' } : s
+          s.id === seat.id ? { ...s, status: 'available' as const } : s
         )
       );
     } else {
       // Add seat to selected seats
-      const updatedSeat = { ...seat, status: 'selected' };
+      const updatedSeat = { ...seat, status: 'selected' as const };
       setSelectedSeats(prev => [...prev, updatedSeat]);
       setSeats(prev => 
         prev.map(s => 

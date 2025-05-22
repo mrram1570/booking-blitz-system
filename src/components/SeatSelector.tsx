@@ -3,6 +3,7 @@ import React from 'react';
 import { useBooking } from '../contexts/BookingContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { ArrowRight, Ticket } from 'lucide-react';
 
 const SeatSelector: React.FC = () => {
   const { seats, selectedSeats, toggleSeatSelection, selectedShowtime } = useBooking();
@@ -83,6 +84,19 @@ const SeatSelector: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {selectedSeats.length > 0 && (
+          <div className="mt-6 flex justify-center">
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto animate-pulse bg-primary hover:bg-primary/90 text-white"
+            >
+              <Ticket className="mr-2 h-5 w-5" />
+              Confirm Booking
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
