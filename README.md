@@ -75,7 +75,7 @@ Simply open [create a file ] mrram  and open git then  search in git bash  git c
 ofter that open this file in vs code  and open new terminal then use the command npm install ofter that npm run dev it shows the  local:http://localhost:8080/ then open any browser search http://localhost:8080/ open any one of the site  click on the "go to localhost/8080/" it shows the output of the code 
 "
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain ?
 
 Yes, you can!
 
