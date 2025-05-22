@@ -1,6 +1,4 @@
 
-[output of movie ticket booking system]("  Uploading freecompress-VID20250522135340.mp4…")
-
 # Welcome to Your Movie Ticket Booking Project
 
 ## Project Info
