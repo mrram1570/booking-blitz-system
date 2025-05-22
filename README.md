@@ -71,7 +71,8 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [create a file ] mrram  and open git  clone ""
+Simply open [create a file ] mrram  and open git clone "
+"
 
 ## Can I connect a custom domain to my Lovable project?
 
